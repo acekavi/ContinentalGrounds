@@ -10,6 +10,7 @@ public class PlayerInteractions : MonoBehaviour
     [SerializeField] private Transform playerHeadTarget;
     [SerializeField] private Rig headRig;
     [SerializeField] private ThirdPersonController thirdPersonController;
+    [SerializeField] private GameManagerScript gameManager;
 
     public Vector3 playerHeadHeight;
 
@@ -86,6 +87,8 @@ public class PlayerInteractions : MonoBehaviour
             conversationManager.HideInteractionText();
             Destroy(otherObject.gameObject);
             StartCoroutine(DisplayMessageCoroutine("1 Food item added to inventory", 2));
+            gameManager.AddItemToInventory(otherObject.name);
+            _input.interact = false;
         }
 
         if (otherObject.CompareTag("Bench") && _input.interact)

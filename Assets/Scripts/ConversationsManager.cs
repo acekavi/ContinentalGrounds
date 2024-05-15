@@ -2,11 +2,13 @@ using TMPro;
 using UnityEngine;
 using DialogueEditor;
 using StarterAssets;
+using Unity.VisualScripting;
 
 public class ConversationsManager : MonoBehaviour
 {
     [SerializeField] private GameObject interactionText;
     [SerializeField] private ThirdPersonController thirdPersonController;
+    [SerializeField] private GameObject gameManager;
 
     void Update()
     {
@@ -54,5 +56,15 @@ public class ConversationsManager : MonoBehaviour
         ConversationManager.Instance.EndConversation();
         // Enable movement when conversation ends
         thirdPersonController.SetMovement(true);
+    }
+
+    public void AddObjective(string objective)
+    {
+        CustomEvent.Trigger(this.gameManager, "AddObjective", objective);
+    }
+
+    public void CompleteObjective(string objective)
+    {
+        CustomEvent.Trigger(this.gameManager, "CompleteObjective", objective);
     }
 }
