@@ -10,6 +10,8 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private ThirdPersonController thirdPersonController;
     [SerializeField] private GameObject gameManager;
 
+    [SerializeField] private NPCConversation initialConversation;
+
     void Update()
     {
         if (ConversationManager.Instance != null && ConversationManager.Instance.IsConversationActive)
@@ -31,6 +33,11 @@ public class ConversationsManager : MonoBehaviour
         {
             EndConversation();
         }
+    }
+
+    public void InitialConversation()
+    {
+        StartConversation(initialConversation);
     }
 
     public void ShowInteractionText(string text)
