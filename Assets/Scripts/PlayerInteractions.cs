@@ -31,13 +31,12 @@ public class PlayerInteractions : MonoBehaviour
     {
         if (_isSitting)
         {
-            thirdPersonController.SetMovement(false);
+            SetMovement(false);
             conversationManager.ShowInteractionText("Press 'E' to stand up");
             if (_input.interact)
             {
                 StandUp();
                 conversationManager.HideInteractionText();
-                _input.interact = false;
             }
         }
     }
@@ -88,7 +87,6 @@ public class PlayerInteractions : MonoBehaviour
             Destroy(otherObject.gameObject);
             StartCoroutine(DisplayMessageCoroutine("1 Food item added to inventory", 2));
             gameManager.AddItemToInventory(otherObject.name);
-            _input.interact = false;
         }
 
         if (otherObject.CompareTag("Bench") && _input.interact)
@@ -97,7 +95,6 @@ public class PlayerInteractions : MonoBehaviour
             {
                 conversationManager.HideInteractionText();
                 SitOnBench(otherObject.gameObject);
-                _input.interact = false;
             }
             catch (System.Exception)
             {
@@ -123,7 +120,6 @@ public class PlayerInteractions : MonoBehaviour
 
             conversationManager.HideInteractionText();
             conversationManager.EndConversation();
-            _input.interact = false;
             _isInteracting = false;
         }
 
@@ -190,6 +186,11 @@ public class PlayerInteractions : MonoBehaviour
     {
         _isSitting = false;
         _animator.SetBool("Sitting", false);
-        thirdPersonController.SetMovement(true);
+        SetMovement(true);
+    }
+
+    public void SetMovement(bool canMove)
+    {
+        thirdPersonController.SetMovement(canMove);
     }
 }

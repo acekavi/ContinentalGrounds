@@ -7,10 +7,9 @@ using Unity.VisualScripting;
 public class ConversationsManager : MonoBehaviour
 {
     [SerializeField] private GameObject interactionText;
-    [SerializeField] private ThirdPersonController thirdPersonController;
     [SerializeField] private GameObject gameManager;
-
     [SerializeField] private NPCConversation initialConversation;
+    [SerializeField] private PlayerInteractions playerInteractions;
 
     void Update()
     {
@@ -54,7 +53,7 @@ public class ConversationsManager : MonoBehaviour
     public void StartConversation(NPCConversation thisConversation)
     {
         // Disable movement when conversation starts
-        thirdPersonController.SetMovement(false);
+        playerInteractions.SetMovement(false);
         ConversationManager.Instance.StartConversation(thisConversation);
     }
 
@@ -62,7 +61,7 @@ public class ConversationsManager : MonoBehaviour
     {
         ConversationManager.Instance.EndConversation();
         // Enable movement when conversation ends
-        thirdPersonController.SetMovement(true);
+        playerInteractions.SetMovement(true);
     }
 
     public void AddObjective(string objective)

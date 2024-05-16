@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    public GameObject player;  // Reference to the player GameObject
+    public PlayerInteractions player;  // Reference to the player GameObject
     public Canvas MainCanvas;  // Reference to the Canvas
     public ConversationsManager conversationsManager;  // Reference to the ConversationsManager
 
@@ -13,7 +13,7 @@ public class SceneManager : MonoBehaviour
     {
         if (player != null)
         {
-            player.SetActive(false);
+            player.gameObject.SetActive(false);
         }
         else
         {
@@ -37,7 +37,6 @@ public class SceneManager : MonoBehaviour
     {
         if (player != null)
         {
-            player.SetActive(true);  // Enable the player GameObject
             conversationsManager.InitialConversation();  // Start the initial conversation
         }
         else

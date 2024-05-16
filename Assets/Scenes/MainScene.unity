@@ -6898,7 +6898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249029872}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.059936274, y: 0.8839404, z: 0.11814285, w: -0.44844094}
+  m_LocalRotation: {x: 0.060087647, y: 0.88390046, z: 0.118441224, w: -0.44842073}
   m_LocalPosition: {x: -6.031769, y: -0.0598917, z: -2.0204086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8710,7 +8710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e92557c19dc924fbf9fb7b6798cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7001828236965822542}
+  player: {fileID: 7665316797135297273}
   MainCanvas: {fileID: 1564353668}
   conversationsManager: {fileID: 1722348615}
 --- !u!4 &373441736 stripped
@@ -10960,7 +10960,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.681
+      value: 27.739
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -12862,7 +12862,7 @@ PrefabInstance:
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.681
+      value: 27.739
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
@@ -22807,7 +22807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1579671496
 Transform:
   m_ObjectHideFlags: 0
@@ -22881,8 +22881,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playableDirector: {fileID: 1579671497}
   ZoroObject: {fileID: 1008090169}
-  _animator: {fileID: 4359627200608616590}
+  playerInteractions: {fileID: 7665316797135297273}
   _conversationsManager: {fileID: 1722348615}
+  GameManager: {fileID: 3775883649618518669}
 --- !u!4 &1592005590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6857788192064577062, guid: 5fc7b439496c274419b045b9f4cb3508,
@@ -24951,9 +24952,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionText: {fileID: 640857551}
-  thirdPersonController: {fileID: 7001828236965822533}
   gameManager: {fileID: 3775883649618518669}
   initialConversation: {fileID: 1989917608}
+  playerInteractions: {fileID: 7665316797135297273}
 --- !u!1001 &1726789828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28193,17 +28194,17 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7665316797135297273}
-        m_TargetAssemblyTypeName: PlayerInteractions, Assembly-CSharp
-        m_MethodName: TriggerAnimation
-        m_Mode: 5
+      - m_Target: {fileID: 7001828236965822542}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LongTalk
-          m_BoolArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   NodeID: 0
   TMPFont: {fileID: 0}
@@ -28223,19 +28224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7665316797135297273}
-        m_TargetAssemblyTypeName: PlayerInteractions, Assembly-CSharp
-        m_MethodName: StopAnimation
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LongTalk
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   NodeID: 2
   TMPFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   Icon: {fileID: 21300000, guid: 01e4062eee58e9c47882347a83ab101c, type: 3}
@@ -28355,8 +28344,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentIDCounter: 3
   json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":351,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Ah
-    shoot! Here we go again!","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Simon","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":352,"yPos":146},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Looks
-    like I''m lost again.","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Simon","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":352,"yPos":267},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Oh
+    shoot! Here we go again!","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Simon","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":352,"yPos":148},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Looks
+    like I''m lost again.","parentUIDs":[0],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Simon","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":352,"yPos":269},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Oh
     wait there''s a cafe or a restaurant over there. Maybe I can find the owner.","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Simon","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Simon
@@ -28371,19 +28360,7 @@ MonoBehaviour:
     type: 2}
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7665316797135297273}
-        m_TargetAssemblyTypeName: PlayerInteractions, Assembly-CSharp
-        m_MethodName: StopAnimation
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LongTalk
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1998097098
 GameObject:
   m_ObjectHideFlags: 0
@@ -28544,7 +28521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004919342}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.020648563, y: 0.9557639, z: -0.06921487, w: 0.2851288}
+  m_LocalRotation: {x: 0.07719725, y: 0.32599393, z: -0.026719986, w: 0.94183576}
   m_LocalPosition: {x: 4.43, y: 1.0201893, z: 4.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36039,7 +36016,7 @@ Transform:
   m_GameObject: {fileID: 7001828236965822542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.22380427, z: 0, w: 0.9746341}
-  m_LocalPosition: {x: -306.06, y: 26.181, z: -161.32}
+  m_LocalPosition: {x: -306.06, y: 26.239, z: -161.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
