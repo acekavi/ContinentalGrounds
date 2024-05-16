@@ -37,6 +37,7 @@ public class PlayerInteractions : MonoBehaviour
             {
                 StandUp();
                 conversationManager.HideInteractionText();
+                _input.interact = false;
             }
         }
     }
@@ -87,6 +88,7 @@ public class PlayerInteractions : MonoBehaviour
             Destroy(otherObject.gameObject);
             StartCoroutine(DisplayMessageCoroutine("1 Food item added to inventory", 2));
             gameManager.AddItemToInventory(otherObject.name);
+            _input.interact = false;
         }
 
         if (otherObject.CompareTag("Bench") && _input.interact)
@@ -95,6 +97,7 @@ public class PlayerInteractions : MonoBehaviour
             {
                 conversationManager.HideInteractionText();
                 SitOnBench(otherObject.gameObject);
+                _input.interact = false;
             }
             catch (System.Exception)
             {
@@ -120,6 +123,7 @@ public class PlayerInteractions : MonoBehaviour
 
             conversationManager.HideInteractionText();
             conversationManager.EndConversation();
+            _input.interact = false;
             _isInteracting = false;
         }
 
