@@ -10,6 +10,9 @@ This project was built to fulfill coursework requirements for the Advanced Inter
 - **Inventory System**: Implemented along with UI interactions.
 - **Terrain Generation**: Generated with terrain tools.
 
+## Demo
+- YouTube Link - https://youtu.be/sSeZ1Z7_A8w
+
 ## How to Run
 1. Clone the repository: git clone https://github.com/acekavi/continental-grounds.git
 2. Open the project in Unity.
